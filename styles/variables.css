@@ -3,8 +3,14 @@
 :root {
   --font-variable: 'Inter-Variable';
   --font-regular: 'PressStart2P-Regular';
-
-
-
-
+  --themes-background: #000;
+  --themes-main-color: #00CC14;
+  --background-gradient: #000;
+  --gradient: 180deg, #007F0C 0%, #004306 100%;
+  --wgth-large: 785;
+  --wgth-small: 465;
+  --text-stroke: 0.2px #000;
+  --hover-color: #000;
+  --red-heart: #FF0000;
  }
+
