@@ -177,19 +177,25 @@
   border-bottom:  2px solid var(--themes-main-color);
 }
 
+
 .main__text-img {
-  position: absolute;
+  position: absolute; 
+  z-index: 2;
   top: 25px;
   right: 25px;
-  z-index: 2;
   opacity: 0.5;
   font-family: var(--font-regular);
   font-size: 14px;
   text-transform: uppercase;
   mix-blend-mode: hard-light;
-  -webkit-text-stroke: var(--text-stroke);
+ 
 }
 
+@supports(-webkit-text-stroke: var(--text-stroke)){
+  .main__text-img {
+  text-stroke: var(--text-stroke);
+  }
+}
 
 .main__content {
   display: flex;
