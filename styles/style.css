@@ -48,14 +48,14 @@
   flex-shrink: 0;
   justify-content: end;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
   width: clamp(23.438rem, 8.929rem + 38.69vw, 43.75rem);
   height: clamp(20.438rem, 18.607rem + 4.881vw, 23rem);
   margin-top: 102px;
   border:  2px solid var(--themes-main-color);
+  padding-bottom: 25px;
   color: var(--themes-main-color);
   background-color: var(--themes-background);
-  
 }
 
 .main__header-text {
@@ -74,9 +74,8 @@
 .theme-menu__list { 
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 7px;
   width: 84px;
-  height: 96px;
   margin-left: 5px;
   font-family: var(--font-regular); 
 
@@ -84,14 +83,11 @@
 
 .theme-menu__item {
  position: relative;
- height: 14px;
 }
 
 .theme-menu__button {
   border: none;
   font-size: 14px;
-  font-style: normal;
-  line-height: normal;
   text-transform: uppercase;
   background: none;
   cursor: pointer;  
@@ -115,7 +111,7 @@
   opacity: 1;
   background-color: var(--themes-main-color); 
   transition:  0.3s ease;
- 
+  
 }
 
 
@@ -130,6 +126,8 @@
 
 .main {
   display: flex;
+  flex-direction: column;
+  gap: 54px;
   width: clamp(23.438rem, 8.929rem + 38.69vw, 43.75rem);
   margin-top: 100px;
 }
@@ -137,7 +135,7 @@
 .card-main__list {
   display: flex;
   flex-direction: column;
-  gap: 54px;
+  gap: 52px;
   width: clamp(23.438rem, 8.929rem + 38.69vw, 43.75rem);
   background: none;
 }
@@ -151,38 +149,40 @@
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  min-height: 31px;
   border-bottom:  2px solid var(--themes-main-color);
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 10px;
-  font-weight: var(--wgth-large);
   font-size: 18px;
-
+  font-variation-settings: var(--wgth-large);
 }
 
 .main__text {
-  font-weight: var(--wgth-small);
   font-size: 18px;
   font-style: normal;
   line-height: 21px; /* 116.667% */
+  font-variation-settings: var(--wgth-small);
 }
 
 .main-card__images {
   position: relative;
   display: flex;
   width: clamp(23.188rem, 8.679rem + 38.69vw, 43.5rem);
+  height: clamp(23.188rem, 8.679rem + 38.69vw, 43.5rem);;  
+  border-bottom:  2px solid var(--themes-main-color);
 }
 
 .main__images {
   width: 100%;
-  border-bottom:  2px solid var(--themes-main-color);
+
 }
 
 
 .main__text-img {
-  position: absolute; 
-  z-index: 2;
+  position: absolute;
   top: 25px;
-  right: 25px;
+  right: 25px; 
+  z-index: 2;
   opacity: 0.5;
   font-family: var(--font-regular);
   font-size: 14px;
@@ -193,7 +193,7 @@
 
 @supports(-webkit-text-stroke: var(--text-stroke)){
   .main__text-img {
-  text-stroke: var(--text-stroke);
+  -webkit-text-stroke: var(--text-stroke);
   }
 }
 
@@ -214,7 +214,15 @@
   position: relative;
   display: flex;
   align-items: center;  
-  gap: 12px;  
+  gap: 10px;  
+  border: none;  
+  padding: 0;
+  outline: none;  
+  background-color: var(--themes-background);
+  cursor: pointer;
+}
+
+.main__buttons {
   border: none;  
   padding: 0;
   outline: none;  
@@ -244,13 +252,13 @@
   transition: 0.5s ease-in-out;
 }
 
-.card__like-button:focus-visible .button__text {
+.main__buttons:focus-visible .button__text {
   box-shadow: 2px 2px 0px 0px var(--themes-main-color);
 }
 
 
 
-.card__like-button:focus-visible .like-icon {
+.main__buttons:focus-visible .like-icon {
   outline: 2px solid var(--themes-main-color);
   transition:  0.3s ease;
 }
@@ -301,14 +309,12 @@
 
 
 
-.footer {
+.modal__section {
   display: flex;
   justify-content: center;
-  margin-top: 54px;
-
 }
 
-.footer__button {
+.main-modal__button {
   position: relative;
   z-index: 2;
   display: flex;
@@ -316,40 +322,138 @@
   align-items: center;
   gap: 8px;
   width: clamp(19.125rem, 17.83rem + 3.452vw, 20.938rem);
-  height: clamp(3.188rem, 1.893rem + 3.452vw, 5rem);
   margin-bottom: 105px;
   border: none;
   border: 2px solid var(--themes-main-color);
+  padding: 9px 0;
   overflow: hidden;
   background: none;
   background-color: var(--themes-background);  
   cursor: pointer;  
 }
 
-.footer__button:hover {
+.main-modal__button:hover {
   color: var(--hover-color);
   transition: 0.5s ease-in-out;
 
 }
 
-.footer__floppy{
+.main__floppy {
   width: clamp(1.75rem, 2.063rem + -0.833vw, 1.313rem);
   height: clamp(1.75rem, 2.063rem + -0.833vw, 1.313rem);
 }
 
-.footer__button:hover .footer__floppy {
+.main-modal__button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--themes-main-color);
+  outline: none;
+}
+
+.main-modal__button:hover .main__floppy {
     fill: var(--hover-color);
 }
-.footer__text {
+
+
+.main-modal__text {
   font-family: var(--font-regular);
   font-size: 14px; 
   line-height: 90%; /* 12.6px */
 }
 
+
+.modal__dialog {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0; 
+  border: none;
+  background: var(--dialog-bg);
+}
+
+.dialog__body {
+  display: grid;
+  grid-template-rows: 1fr 1fr ;
+  align-items: end;
+  gap: 15px;
+  width: clamp(21.313rem, 20.598rem + 1.905vw, 22.313rem);
+  height: clamp(12.063rem, 11.973rem + 0.238vw, 12.188rem);
+  border: 2px solid var(--themes-main-color);
+  padding: 30px 34px;
+  background-color: var(--themes-background);  
+}
+
+
+.modasl_dialog {
+  position: absolute;
+  
+ 
+}
+
+.modal__dialog:not([open]) {
+  opacity: 0;
+  pointer-events: none;
+} 
+
+
+.dialog__button {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: clamp(16.063rem, 14.455rem + 4.286vw, 18.313rem);
+  border: none;
+  border: 2px solid var(--themes-main-color);
+  padding: 9px 0;
+  overflow: hidden;
+  color: var(--themes-main-color);
+  font-family: var(--font-regular);
+  font-size: 14px;  
+  text-transform: uppercase;
+  background-color: var(--themes-background);  
+  cursor: pointer;
+}
+
+.dialog__button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--themes-main-color);
+  outline: none;
+}
+
+.dialog__button:hover {
+  color: var(--hover-color);
+} 
+
+.modal__content {
+  display: grid;
+  grid-template-columns: 1fr 3fr; 
+  align-items: center;
+}
+
+.modal__floppy{
+  display: flex;
+  justify-self: flex-start;
+  width: 39px;
+  height: 39px;
+}
+
+
+.dialog__text {
+  color: var(--themes-main-color);
+  font-family: var(--font-regular);
+  font-size: 14px;
+  line-height: 150%; /* 21px */
+  text-transform: uppercase;
+}
+
 @media (width <= 750px) {
-  .footer__button {
+  .main-modal__button {
     flex-direction: column;
-    height: auto;
-    padding: 15px 20px;
+    flex-wrap: nowrap;
+    max-height: 80px;
+    padding: 15px;
   }
 }
