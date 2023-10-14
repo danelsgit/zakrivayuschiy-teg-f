@@ -50,7 +50,7 @@
   align-items: center;
   gap: 20px;
   width: clamp(23.438rem, 8.929rem + 38.69vw, 43.75rem);
-  height: clamp(20.438rem, 18.607rem + 4.881vw, 23rem);
+ 
   margin-top: 102px;
   border:  2px solid var(--themes-main-color);
   padding-bottom: 25px;
@@ -59,14 +59,15 @@
 }
 
 .main__header-text {
-  font-family: var(--font-regular);
+  font-family: var(--font-regular), sans-serif;
   font-size: clamp(3.063rem, 2.348rem + 1.905vw, 4.063rem);
   text-transform: uppercase;
+  margin-top: clamp(7.25rem, 6.536rem + 1.905vw, 8.25rem);
 }
 
 .sub__header-text {
   margin-bottom: 5px;
-  font-family: var(--font-regular);
+  font-family: var(--font-regular), sans-serif;
   font-size: clamp(0.875rem, 0.473rem + 1.071vw, 1.438rem);
   text-transform: uppercase;
 }
@@ -77,7 +78,7 @@
   gap: 7px;
   width: 84px;
   margin-left: 5px;
-  font-family: var(--font-regular); 
+  font-family: var(--font-regular), sans-serif; 
 
 }
 
@@ -127,7 +128,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 54px;
+  gap: 52px;
   width: clamp(23.438rem, 8.929rem + 38.69vw, 43.75rem);
   margin-top: 100px;
 }
@@ -135,7 +136,7 @@
 .card-main__list {
   display: flex;
   flex-direction: column;
-  gap: 52px;
+  gap: 50px;
   width: clamp(23.438rem, 8.929rem + 38.69vw, 43.75rem);
   background: none;
 }
@@ -158,6 +159,7 @@
 }
 
 .main__text {
+  font-family: var(--font-variable), inherit;
   font-size: 18px;
   font-style: normal;
   line-height: 21px; /* 116.667% */
@@ -184,7 +186,7 @@
   right: 25px; 
   z-index: 2;
   opacity: 0.5;
-  font-family: var(--font-regular);
+  font-family: var(--font-regular), sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   mix-blend-mode: hard-light;
@@ -241,27 +243,28 @@
   height: 38px;  
   border: 2px solid var(--themes-main-color);
   overflow: hidden;
-  font-family: var(--font-regular);
+  font-family: var(--font-regular), sans-serif;
   font-size: 14px;
   line-height: 90%; /* 12.6px */
-  
+  background-color: var(--themes-background);
 }
 
-.button__text:hover {
-  color: var(--hover-color);
-  transition: 0.5s ease-in-out;
-}
 
 .main__buttons:focus-visible .button__text {
   box-shadow: 2px 2px 0px 0px var(--themes-main-color);
 }
 
 
-
 .main__buttons:focus-visible .like-icon {
   outline: 2px solid var(--themes-main-color);
   transition:  0.3s ease;
 }
+
+.color__animate {
+  color: var(--color-button);
+  mix-blend-mode: difference;
+}
+
 
 .like-icon {
   position: relative;
@@ -330,17 +333,15 @@
   background: none;
   background-color: var(--themes-background);  
   cursor: pointer;  
-}
-
-.main-modal__button:hover {
-  color: var(--hover-color);
-  transition: 0.5s ease-in-out;
 
 }
+
 
 .main__floppy {
   width: clamp(1.75rem, 2.063rem + -0.833vw, 1.313rem);
   height: clamp(1.75rem, 2.063rem + -0.833vw, 1.313rem);
+  fill: var(--color-button);
+  mix-blend-mode: difference;
 }
 
 .main-modal__button:focus-visible {
@@ -348,16 +349,17 @@
   outline: none;
 }
 
-.main-modal__button:hover .main__floppy {
-    fill: var(--hover-color);
-}
 
 
 .main-modal__text {
-  font-family: var(--font-regular);
+  font-family: var(--font-regular), sans-serif;
   font-size: 14px; 
   line-height: 90%; /* 12.6px */
+  color: var(--color-button);
+  mix-blend-mode: difference;
 }
+
+
 
 
 .modal__dialog {
@@ -386,12 +388,6 @@
 }
 
 
-.modasl_dialog {
-  position: absolute;
-  
- 
-}
-
 .modal__dialog:not([open]) {
   opacity: 0;
   pointer-events: none;
@@ -411,11 +407,12 @@
   padding: 9px 0;
   overflow: hidden;
   color: var(--themes-main-color);
-  font-family: var(--font-regular);
+  font-family: var(--font-regular), sans-serif;
   font-size: 14px;  
   text-transform: uppercase;
   background-color: var(--themes-background);  
   cursor: pointer;
+  transition: color 0.7s ease-in-out;
 }
 
 .dialog__button:focus-visible {
@@ -438,12 +435,13 @@
   justify-self: flex-start;
   width: 39px;
   height: 39px;
+ 
 }
 
 
 .dialog__text {
   color: var(--themes-main-color);
-  font-family: var(--font-regular);
+  font-family: var(--font-regular), sans-serif;
   font-size: 14px;
   line-height: 150%; /* 21px */
   text-transform: uppercase;

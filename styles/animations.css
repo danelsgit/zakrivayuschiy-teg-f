@@ -22,7 +22,7 @@
   left: -16px;
   height: auto;
   opacity: 0.6;
-  animation: buttonActive 1.5s steps(2) infinite;
+  animation: buttonActive 1.5s ease-in-out infinite alternate;
   animation-play-state: running;
   pointer-events: none;
 }
@@ -36,8 +36,6 @@
   background-color: var(--themes-main-color); 
   transition: transform 0.5s ease-in-out;
   transform: translate(-100%); 
-  mix-blend-mode: difference;
-  
 }
 
 .button__text:hover::before {
@@ -60,6 +58,7 @@
   transform: translate(0);
 }
 
+
 .dialog__button::before {
   content: '';
   position: absolute;
@@ -69,6 +68,7 @@
   background-color: var(--themes-main-color); 
   transition: transform 0.5s ease-in-out;
   transform: translate(-100%); 
+  
 }
 
 .dialog__button:hover::before {
